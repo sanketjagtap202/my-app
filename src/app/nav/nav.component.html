@@ -1,0 +1,21 @@
+<ul ngbNav #nav="ngbNav" class="nav-tabs">
+    <li ngbNavItem>
+      <a ngbNavLink routerLink="home" href="home.component.html"  >Home</a>
+      <!-- <ng-template ngbNavContent>First content</ng-template> -->
+    </li>
+    <li ngbNavItem>
+      <a ngbNavLink routerLink="about" href="about.component.html">About</a>
+      <!-- <ng-template ngbNavContent>Second content</ng-template> ngbNavLink-->
+    </li>
+    <li ngbNavItem>
+      <a ngbNavLink routerLink="career" href="career.component.html">Career</a>
+    </li>
+    <li ngbNavItem>
+      <a ngbNavLink routerLink="signin" href="signin.component.html">SignIn</a>
+    </li>
+  </ul>
+  <div [ngbNavOutlet]="nav">
+    
+     
+  </div>
+  

@@ -1,0 +1,32 @@
+{
+  "posts": [
+    {
+      "id": 7,
+      "firstName": "test",
+      "lastName": "survey",
+      "email": "test@gmail.com",
+      "mobile": "126545",
+      "income": 25466
+    },
+    {
+      "id": 9,
+      "firstName": "Jonny",
+      "lastName": "mark",
+      "email": "mark@gmail.com",
+      "mobile": "987763526",
+      "income": 20000000
+    },
+    {
+      "id": 10,
+      "firstName": "Prem",
+      "lastName": "Birla",
+      "email": "prem@gmail.com",
+      "mobile": "1928373737",
+      "income": 23000000
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

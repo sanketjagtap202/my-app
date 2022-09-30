@@ -1,0 +1,86 @@
+<nav class=" navbar navbar-light bg-primary">
+<div class="container-fluid">
+    <h1 style="color: #fff;">iCoder.com</h1>
+    <div class="d-flex">
+        <button class="btn btn-success" (click)="clickAddParticipant()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"  >Add Participant</button>
+    </div>
+</div>
+</nav>
+
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">Participant ID</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email Address</th>
+            <th scope="col">Mobile Number</th>
+            <th scope="col">Income(in Rupee)</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of participantData">
+            <td>{{row.id}}</td>
+            <td>{{row.firstName}}</td>
+            <td>{{row.lastName}}</td>
+            <td>{{row.email}}</td>
+            <td>{{row.mobile}}</td>
+            <td>{{row.income}}</td>
+            <td>
+                <button (click)="onEdit(row)" class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
+                <button (click)="deleteParticipants(row)" class="btn btn-danger mx-3">Delete</button>
+            </td>
+
+        </tr>
+    </tbody>
+</table>
+
+
+
+<!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Participant Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Form content Here -->
+          <form [formGroup]="formValue">
+            <div class="mb-3">
+              <label for="exampleInputfName" class="form-label" >First Name</label>
+              <input type="text" formControlName="firstName" required class="form-control" id="exampleInputfName">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputlName" class="form-label">Last Name</label>
+              <input type="text" formControlName="lastName" required class="form-control" id="exampleInputlName">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputemail" class="form-label">Email Address</label>
+                <input type="email" formControlName="email" required class="form-control" id="exampleInputemail">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputnumber" class="form-label">Mobile Number</label>
+                <input type="text" formControlName="mobile" required class="form-control" id="exampleInputnumber">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputincome" class="form-label">Income</label>
+                <input type="number" formControlName="income" required class="form-control" id="exampleInputincome">
+              </div>
+           
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" *ngIf="showAdd"  (click)="postParticipantDetails()">Add</button>
+          <button type="button" class="btn btn-primary" *ngIf="showUpdate" (click)="updateParticipant()">Update</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
